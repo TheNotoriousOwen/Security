@@ -52,31 +52,6 @@ public class FirstJoin implements Listener {
 
 
     @EventHandler
-    public void onPlayerJoinEvent(PlayerJoinEvent e) {
-
-        Player player = e.getPlayer();
-
-        if (player == null) {
-            return;
-        }
-
-        if (player.hasPlayedBefore()) {
-            return;
-        }
-
-
-        player.playSound(player.getLocation(), Sound.UI_TOAST_CHALLENGE_COMPLETE,  50F, 1);
-        player.sendMessage("§7Ciao " + player.getName() + "§7 benvenuto su NightCity!");
-
-        Bukkit.getScheduler().runTaskLaterAsynchronously(WelcomeNight.getMain(), () -> {
-
-            player.sendTitle("§9§lBENVENUTO SU", "§b§LNIGHTCITY", 5, 60, 5);
-
-        }, 30);
-    }
-
-
-    @EventHandler
     public void onPlayerIteractNpc(PlayerInteractAtEntityEvent e) {
 
         Player player = e.getPlayer();
